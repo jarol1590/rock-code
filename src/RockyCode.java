@@ -22,54 +22,48 @@ import exceptions.MiembroException;
 
 public class RockyCode {
     public static void main(String[] args) throws Exception {
-
-        // FECHA Y HORA
-
+        // Inicializamos la banda
         Calendar fecha = Calendar.getInstance();
         fecha.set(2023, Calendar.NOVEMBER, 23);
         Date fechaCreacionBanda = fecha.getTime();
         LocalTime tiempoCancion = LocalTime.of(0, 4, 15);
+        Banda banda1 = new Banda("Rock&Code", "Punk", fechaCreacionBanda, "");
 
-        Calendar fechaAlbum = Calendar.getInstance();
-        fechaAlbum.set(2023, Calendar.NOVEMBER, 24);
-        Date fechaLanzamientoAlbum = fechaAlbum.getTime();
-
-        // Inicializadores
-        ControlMiembro controlMiembro = new ControlMiembro();
+        // Inicializamos controles
+        ControlBanda controlBanda = new ControlBanda(banda1);
+        ControlMiembro controlMiembro = new ControlMiembro(controlBanda);
+        ControlAlbum controlAlbum = new ControlAlbum(banda1);
         List<Concierto> conciertos = new ArrayList<>();
         ControlConcierto controlConcierto = new ControlConcierto(conciertos);
 
         // Registrar y actualizar la información básica de la banda (género, fecha de
         // creación, fotos).
-
-        Banda banda1 = new Banda("Rock&Code", "Punk", fechaCreacionBanda, "");
-        ControlBanda controlBanda = new ControlBanda(banda1);
         controlBanda.actualizarBanda(null, null, fechaCreacionBanda, null);
 
         // Agregar o eliminar miembros a la banda (nombre, rol en la banda, instrumentos
         // que toca)
-        Miembro miembro = controlMiembro.crearMiembro("2", "Javier", Rol.GUITARRISTA);
+        Miembro miembro1 = controlMiembro.crearMiembro("2", "Javier", Rol.GUITARRISTA);
         Miembro miembro2 = controlMiembro.crearMiembro("1", "Eider", Rol.VOCALISTA);
-        controlBanda.agregarMiembro(miembro);
+        Miembro miembro3 = controlMiembro.crearMiembro("1", "Pedro", Rol.GUITARRISTA);
+        controlBanda.agregarMiembro(miembro1);
         controlBanda.agregarMiembro(miembro2);
+        controlBanda.agregarMiembro(miembro3);
         controlMiembro.agregarInstrumento("2", "Guitarra");
         controlMiembro.agregarInstrumento("1", "Guitarra");
         controlMiembro.agregarInstrumento("1", "Bajo");
-        controlBanda.eliminarMiembro(miembro2);
+        controlBanda.eliminarMiembro(miembro3);
 
         // Lanzar un nuevo Album
-
+        Calendar fechaAlbum = Calendar.getInstance();
+        fechaAlbum.set(2023, Calendar.NOVEMBER, 24);
+        Date fechaLanzamientoAlbum = fechaAlbum.getTime();
         Album primerAlbum = new Album("PrimerAlbum", fechaLanzamientoAlbum);
         controlBanda.agregarAlbumBanda(primerAlbum);
 
         // Consultar la información de la banda, incluyendo los miembros.
-
         controlBanda.consultarInformacionBanda();
 
         // Agregar canciones al álbum (nombre, duración)
-
-        ControlAlbum controlAlbum = new ControlAlbum(banda1, primerAlbum);
-
         Cancion cancion = new Cancion("Primera Cancion", tiempoCancion);
         Cancion cancion2 = new Cancion("Segunda Cancion", tiempoCancion);
 
@@ -85,7 +79,7 @@ public class RockyCode {
         controlAlbum.imprimirCancionesPorAlbum("SegundoAlbum");
 
         try {
-            controlAlbum.buscarCancion("Segunda Cancion");
+            controlAlbum.buscarCancion("Segunda Cancion", primerAlbum);
         } catch (CancionException e) {
             System.out.println(e.getMessage() + " Buscar solo por cancion");
         }
@@ -96,6 +90,7 @@ public class RockyCode {
             System.out.println(e.getMessage() + " Buscar miembro por cedula");
         }
 
+        // Crear conciertos
         Calendar calendarFechaConciertoUno = Calendar.getInstance();
         calendarFechaConciertoUno.set(2023, Calendar.NOVEMBER, 23);
         Date fechaConciertoUno = calendarFechaConciertoUno.getTime();
@@ -113,7 +108,6 @@ public class RockyCode {
 
         controlConcierto.agregarConcierto(conciertoUno);
         controlConcierto.agregarConcierto(conciertoDos);
-
         controlConcierto.verInfoBasicaConciertos();
 
     }

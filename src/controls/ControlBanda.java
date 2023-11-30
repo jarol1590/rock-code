@@ -19,21 +19,20 @@ public class ControlBanda {
     }
 
     public void agregarMiembro(Miembro miembro) {
-
         this.banda.getMiembros().add(miembro);
-
     }
 
     public void eliminarMiembro(Miembro miembro) {
-
         this.banda.getMiembros().remove(miembro);
-
     }
 
     public Miembro buscarMiembro(String cedula) {
-
         return banda.getMiembros().stream().filter(miembro -> miembro.getCedula().equals(cedula)).findFirst()
                 .orElseThrow(() -> new MiembroException("Miembro no encontrado"));
+    }
+
+    public void agregarAlbumBanda(Album album) {
+        this.banda.getAlbum().add(album);
     }
 
     public void actualizarBanda(String nombre, String genero, Date fecha, String foto) {
@@ -84,9 +83,4 @@ public class ControlBanda {
 
     }
 
-    public void agregarAlbumBanda(Album album){
-        this.banda.getAlbum().add(album);
-    }
-
-    
 }

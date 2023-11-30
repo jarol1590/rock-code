@@ -12,18 +12,16 @@ import exceptions.CancionException;
 public class ControlAlbum {
 
     private Banda banda;
-    private Album album;
     private List<Cancion> canciones;
 
-    public ControlAlbum(Banda banda, Album album) {
+    public ControlAlbum(Banda banda) {
         this.banda = banda;
-        this.album = album;
         this.canciones = new ArrayList<>();
     }
 
     public void agregarCancionAlbum(Cancion cancion, Album album) {
 
-        this.album.getCancion().add(cancion);
+        album.getCancion().add(cancion);
         this.canciones.add(cancion);
         System.out.println(cancion.getNombre() + " Agregada al album: " + album.getNombre());
 
@@ -41,18 +39,17 @@ public class ControlAlbum {
 
         if (albumBuscdo != null) {
             return albumBuscdo.getCancion();
-            
+
         }
 
         throw new CancionException("Cancion no encontrada");
 
-        
     }
 
     public void imprimirCancionesPorAlbum(String nombreAlbum) {
         try {
             List<Cancion> cancionesEncontradas = buscarCancionesPorAlbum(nombreAlbum);
-    
+
             System.out.println("Canciones del Album " + nombreAlbum + ":");
             for (Cancion cancion : cancionesEncontradas) {
                 System.out.println(cancion.getNombre());
@@ -62,7 +59,7 @@ public class ControlAlbum {
         }
     }
 
-    public Cancion buscarCancion(String nombre) {
+    public Cancion buscarCancion(String nombre, Album album) {
 
         for (Cancion cancion : album.getCancion()) {
             if (cancion.getNombre().equals(nombre)) {
@@ -74,7 +71,5 @@ public class ControlAlbum {
         throw new CancionException("Cancion no encontrada");
 
     }
-
-    
 
 }

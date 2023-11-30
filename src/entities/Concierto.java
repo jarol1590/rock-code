@@ -12,7 +12,7 @@ public class Concierto {
     private LocalTime hora;
     private int capacidad;
     private List<Boleto> boletoVendido;
-    
+
     public Concierto(String nombre, String lugar, Date fecha, LocalTime hora, int capacidad) {
         this.nombre = nombre;
         this.lugar = lugar;
@@ -22,5 +22,15 @@ public class Concierto {
         this.boletoVendido = new ArrayList<>();
     }
 
-    
+    @Override
+    public String toString() {
+        return "===============Concierto:=================\n" +
+                "Nombre= " + nombre + '\n' +
+                "Lugar= " + lugar + '\n' +
+                "Fecha= " + fecha + '\n' +
+                "Hora= " + hora + '\n' +
+                "Capacidad= " + capacidad + '\n' +
+                "Boletos vendidos= " + boletoVendido;
+    }
+
 }

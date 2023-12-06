@@ -33,22 +33,6 @@ public class ControlMiembro {
     }
 
     /**
-     * Método que crea un miembro y lo agrega a la lista de miembros de la clase
-     * ControlMiembros
-     * 
-     * @param cedula número identificador del miembro
-     * @param nombre
-     * @param rol    rol en la banda que tiene el miembro, solo se pueden usar los
-     *               tipos contenidos en la
-     *               clase enum (VOCALISTA, GUITARRISTA, BATERISTA, BAJISTA)
-     * @return un objeto tipo Miembro
-     */
-
-    public Miembro crearMiembro(String cedula, String nombre, Rol rol) {
-        return new Miembro(cedula, nombre, rol, null);
-    }
-
-    /**
      * Clase que busca en una lista de miembros el buscado por el atributo Cédula
      * 
      * @param cedula número de identificador del miembro

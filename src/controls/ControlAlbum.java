@@ -70,6 +70,6 @@ public class ControlAlbum {
 
         throw new CancionException("Cancion no encontrada");
 
-    }
+    }   
 
 }

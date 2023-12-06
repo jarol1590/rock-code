@@ -41,9 +41,9 @@ public class RockyCode {
 
         // Agregar o eliminar miembros a la banda (nombre, rol en la banda, instrumentos
         // que toca)
-        Miembro miembro1 = controlMiembro.crearMiembro("2", "Javier", Rol.GUITARRISTA);
-        Miembro miembro2 = controlMiembro.crearMiembro("1", "Eider", Rol.VOCALISTA);
-        Miembro miembro3 = controlMiembro.crearMiembro("1", "Pedro", Rol.GUITARRISTA);
+        Miembro miembro1 = new Miembro("2", "Javier", Rol.GUITARRISTA, null);
+        Miembro miembro2 = new Miembro("1", "Eider", Rol.VOCALISTA, null);
+        Miembro miembro3 = new Miembro("1", "Pedro", Rol.GUITARRISTA, null);
         controlBanda.agregarMiembro(miembro1);
         controlBanda.agregarMiembro(miembro2);
         controlBanda.agregarMiembro(miembro3);

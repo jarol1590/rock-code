@@ -11,7 +11,7 @@ public class Concierto {
     private Date fecha;
     private LocalTime hora;
     private int capacidad;
-    private List<Boleto> boletoVendido;
+    private List<Boleto> boletosVendidos;
 
     public Concierto(String nombre, String lugar, Date fecha, LocalTime hora, int capacidad) {
         this.nombre = nombre;
@@ -19,7 +19,7 @@ public class Concierto {
         this.fecha = fecha;
         this.hora = hora;
         this.capacidad = capacidad;
-        this.boletoVendido = new ArrayList<>();
+        this.boletosVendidos = new ArrayList<>();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Concierto {
                 "Fecha= " + fecha + '\n' +
                 "Hora= " + hora + '\n' +
                 "Capacidad= " + capacidad + '\n' +
-                "Boletos vendidos= " + boletoVendido;
+                "Boletos vendidos= " + boletosVendidos;
     }
 
 }

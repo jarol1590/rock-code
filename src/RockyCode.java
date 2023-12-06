@@ -26,7 +26,6 @@ public class RockyCode {
         Calendar fecha = Calendar.getInstance();
         fecha.set(2023, Calendar.NOVEMBER, 23);
         Date fechaCreacionBanda = fecha.getTime();
-        LocalTime tiempoCancion = LocalTime.of(0, 4, 15);
         Banda banda1 = new Banda("Rock&Code", "Punk", fechaCreacionBanda, "");
 
         // Inicializamos controles
@@ -64,15 +63,15 @@ public class RockyCode {
         controlBanda.consultarInformacionBanda();
 
         // Agregar canciones al álbum (nombre, duración)
-        Cancion cancion = new Cancion("Primera Cancion", tiempoCancion);
+        LocalTime tiempoCancion = LocalTime.of(0, 4, 15);
+        Cancion cancion1 = new Cancion("Primera Cancion", tiempoCancion);
         Cancion cancion2 = new Cancion("Segunda Cancion", tiempoCancion);
 
         try {
-            controlAlbum.agregarCancionAlbum(cancion, controlAlbum.buscarAlbum("PrimerAlbum"));
+            controlAlbum.agregarCancionAlbum(cancion1, controlAlbum.buscarAlbum("PrimerAlbum"));
             controlAlbum.agregarCancionAlbum(cancion2, controlAlbum.buscarAlbum("PrimerAlbum"));
         } catch (AlbumException e) {
             System.out.println(e.getMessage() + " Buscar Album");
-
         }
 
         // Consultar las canciones de un álbum (dado el nombre del álbum)

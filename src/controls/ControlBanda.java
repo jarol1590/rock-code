@@ -15,7 +15,6 @@ public class ControlBanda {
 
     public ControlBanda(Banda banda) {
         this.banda = banda;
-
     }
 
     public void agregarMiembro(Miembro miembro) {

@@ -1,6 +1,7 @@
 package controls;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import entities.Album;
@@ -18,6 +19,21 @@ public class ControlAlbum {
         this.banda = banda;
         this.canciones = new ArrayList<>();
     }
+
+    public Album crearAlbum(String nombre, Date fecha){
+        if(nombre==null || fecha == null){
+            throw new AlbumException("Album no creado. Datos incompletos. Se requieren todos los datos");
+        }
+
+        return new Album(nombre, fecha);
+        
+    }
+
+    /**
+     * Agrega una canción creada a la lista de un álbum
+     * @param cancion Canción que se quiere agregar a un albúm de la banda
+     * @param album Albúm en el que se va a agregar la canción a su lista de canciones
+     */
 
     public void agregarCancionAlbum(Cancion cancion, Album album) {
 

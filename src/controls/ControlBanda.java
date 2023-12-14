@@ -18,6 +18,9 @@ public class ControlBanda {
     }
 
     public void agregarMiembro(Miembro miembro) {
+        if(miembro == null){
+            throw new MiembroException("Miembro invalido");
+        }
         this.banda.getMiembros().add(miembro);
     }
 

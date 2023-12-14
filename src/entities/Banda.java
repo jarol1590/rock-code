@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import entities.Validaciones.BandaValidaciones;
 import exceptions.BandaExceoption;
@@ -78,4 +79,18 @@ public class Banda {
         return foto;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Banda other = (Banda) obj;
+        return Objects.equals(this.nombre, other.nombre) &&
+                Objects.equals(this.genero, other.genero) &&
+                Objects.equals(this.fecha, other.fecha) &&
+                Objects.equals(this.foto, other.foto);
+    }
 }

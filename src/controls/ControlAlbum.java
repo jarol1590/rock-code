@@ -20,7 +20,6 @@ public class ControlAlbum {
     }
 
     public void agregarCancionAlbum(Cancion cancion, Album album) {
-
         album.getCancion().add(cancion);
         this.canciones.add(cancion);
         System.out.println(cancion.getNombre() + " Agregada al album: " + album.getNombre());

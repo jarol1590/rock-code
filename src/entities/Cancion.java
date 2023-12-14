@@ -2,6 +2,7 @@ package entities;
 
 import java.time.LocalTime;
 
+import entities.Validaciones.CancionValidaciones;
 import exceptions.CancionException;
 
 public class Cancion {
@@ -9,7 +10,8 @@ public class Cancion {
     private LocalTime duracion;
 
     public Cancion(String nombre, LocalTime duracion) {
-        if (nombre == null || duracion == null) {
+        boolean esValido = CancionValidaciones.crearCancionValidacion(nombre, duracion);
+        if (!esValido) {
             throw new CancionException("Cancion no creada. Datos incompletos. Todos los datos son requeridos");
         }
         this.nombre = nombre;

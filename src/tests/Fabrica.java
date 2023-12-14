@@ -1,10 +1,12 @@
 package tests;
 
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
 import entities.Album;
 import entities.Banda;
+import entities.Cancion;
 import entities.Miembro;
 import entities.Rol;
 
@@ -30,5 +32,11 @@ public class Fabrica {
         Date fechaLanzamientoAlbum = fechaAlbum.getTime();
         Album album = new Album("PrimerAlbum", fechaLanzamientoAlbum);
         return album;
+    }
+
+    public Cancion crearCancionMock(){
+        LocalTime tiempoCancion = LocalTime.of(0, 4, 15);
+        Cancion cancion1 = new Cancion("PrimerCancion", tiempoCancion);
+        return cancion1;
     }
 }

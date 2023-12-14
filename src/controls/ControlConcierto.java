@@ -1,11 +1,8 @@
 package controls;
 
-import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 
 import entities.Concierto;
-import exceptions.ConciertoException;
 
 public class ControlConcierto {
     List<Concierto> conciertos;
@@ -13,11 +10,20 @@ public class ControlConcierto {
     public ControlConcierto(List<Concierto> conciertos) {
         this.conciertos = conciertos;
     }
-    
+
+    /**
+     * Agrega un concierto a la lista del ControlConciertos, esto se usa con el fin de mostrar
+     * una lista con todos los conciertos que ha dado y va a dar la banda
+     * @param concierto Objeto tipo Concierto que se desea agregar a la lista.
+     */
+
     public void agregarConcierto(Concierto concierto) {
         this.conciertos.add(concierto);
     }
 
+    /**
+     * Muestra la información de todos los conciertos que ha dado y va a dar la banda.
+     */
     public void verInfoBasicaConciertos() {
         for (Concierto concierto : conciertos) {
             System.out.println(concierto.toString());

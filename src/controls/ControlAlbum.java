@@ -20,15 +20,6 @@ public class ControlAlbum {
         this.canciones = new ArrayList<>();
     }
 
-    public Album crearAlbum(String nombre, Date fecha){
-        if(nombre==null || fecha == null){
-            throw new AlbumException("Album no creado. Datos incompletos. Se requieren todos los datos");
-        }
-
-        return new Album(nombre, fecha);
-        
-    }
-
     /**
      * Agrega una canción creada a la lista de un álbum
      * @param cancion Canción que se quiere agregar a un albúm de la banda
@@ -36,11 +27,17 @@ public class ControlAlbum {
      */
 
     public void agregarCancionAlbum(Cancion cancion, Album album) {
-        album.getCancion().add(cancion);
+        album.getCanciones().add(cancion);
         this.canciones.add(cancion);
         System.out.println(cancion.getNombre() + " Agregada al album: " + album.getNombre());
 
     }
+
+    /**
+     * Busca un album por el nombre
+     * @param nombre Nombre del album a buscar. Tipo String
+     * @return Retorna el objeto tipo Album con el nombre exacto ingresado o una Excepción
+     */
 
     public Album buscarAlbum(String nombre) {
 
@@ -48,19 +45,30 @@ public class ControlAlbum {
                 .findFirst().orElseThrow(() -> new AlbumException("Album no encontrado"));
     }
 
+    /**
+     * Busca la lista de canciones que contienen un Album, en caso de que el nombre sea null
+     * lanza una excepción
+     * @param nombreAlbum Nombre del álbum del que desea buscar la lista de canciones, si es 
+     * null lanza excepción.
+     * @return Retorna la lista de canciones del álbum ingresado
+     */
     public List<Cancion> buscarCancionesPorAlbum(String nombreAlbum) {
 
         Album albumBuscdo = buscarAlbum(nombreAlbum);
 
         if (albumBuscdo != null) {
-            return albumBuscdo.getCancion();
+            return albumBuscdo.getCanciones();
 
         }
 
-        throw new CancionException("Cancion no encontrada");
+        throw new AlbumException("Nombre del Album no valido");
 
     }
 
+    /**
+     * Imprime la lista de canciones que contiene un álbum
+     * @param nombreAlbum Nombre del albúm del que se desea buscar la lista de canciones. Tipo String
+     */
     public void imprimirCancionesPorAlbum(String nombreAlbum) {
         try {
             List<Cancion> cancionesEncontradas = buscarCancionesPorAlbum(nombreAlbum);
@@ -74,9 +82,16 @@ public class ControlAlbum {
         }
     }
 
+    /**
+     * Busca una canción incluyendo el nombre del álbum en el que se desee buscar
+     * @param nombre Nombre de la canción a buscar. Tipo String
+     * @param album Albúm en el que se desee buscar la canción. Tipo Album
+     * @return Retorna un objeto tipo Canción que coincida con el nombre dado y esté en la lista
+     * de canciones del objeto Album
+     */
     public Cancion buscarCancion(String nombre, Album album) {
 
-        for (Cancion cancion : album.getCancion()) {
+        for (Cancion cancion : album.getCanciones()) {
             if (cancion.getNombre().equals(nombre)) {
                 return cancion;
             }

@@ -1,7 +1,6 @@
 package controls;
 
 import entities.Miembro;
-import entities.Rol;
 
 /**
  * Clase ControlMiembro que tiene toda la lógica que tenga que ver con los

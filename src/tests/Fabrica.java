@@ -1,10 +1,12 @@
 package tests;
 
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
 import entities.Album;
 import entities.Banda;
+import entities.Concierto;
 import entities.Miembro;
 import entities.Rol;
 
@@ -30,5 +32,17 @@ public class Fabrica {
         Date fechaLanzamientoAlbum = fechaAlbum.getTime();
         Album album = new Album("PrimerAlbum", fechaLanzamientoAlbum);
         return album;
+    }
+
+    public Concierto crearConciertoMock() {
+        Calendar calendarFechaConcierto = Calendar.getInstance();
+        calendarFechaConcierto.set(2024, Calendar.DECEMBER, 15);
+        Date fechaConcierto = calendarFechaConcierto.getTime();
+        LocalTime horaConciertoDos = LocalTime.of(19, 0, 0);
+        Concierto concierto = new Concierto("U Caldas rock", "Universidad de Caldas",
+                fechaConcierto,
+                horaConciertoDos, 2500);
+
+        return concierto;
     }
 }

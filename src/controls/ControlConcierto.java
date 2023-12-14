@@ -13,7 +13,7 @@ public class ControlConcierto {
     public ControlConcierto(List<Concierto> conciertos) {
         this.conciertos = conciertos;
     }
-    
+
     public void agregarConcierto(Concierto concierto) {
         this.conciertos.add(concierto);
     }
@@ -24,4 +24,7 @@ public class ControlConcierto {
         }
     }
 
+    public List<Concierto> getConciertos() {
+        return this.conciertos;
+    }
 }

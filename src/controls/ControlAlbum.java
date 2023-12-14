@@ -44,7 +44,7 @@ public class ControlAlbum {
 
     public Album buscarAlbum(String nombre) {
 
-        return banda.getAlbum().stream().filter(album -> album.getNombre().equals(nombre))
+        return banda.getAlbunes().stream().filter(album -> album.getNombre().equals(nombre))
                 .findFirst().orElseThrow(() -> new AlbumException("Album no encontrado"));
     }
 

@@ -18,7 +18,7 @@ public class Cancion {
      */
 
     public Cancion(String nombre, LocalTime duracion) {
-        boolean esValido = CancionValidaciones.crearCancionValiacion(nombre, duracion);
+        boolean esValido = CancionValidaciones.crearCancionValidacion(nombre, duracion);
         if (!esValido) {
             throw new CancionException("Cancion no creada. Datos incompletos. Todos los datos son requeridos");
         }

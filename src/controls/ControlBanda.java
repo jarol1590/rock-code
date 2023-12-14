@@ -34,7 +34,7 @@ public class ControlBanda {
     }
 
     public void agregarAlbumBanda(Album album) {
-        this.banda.getAlbum().add(album);
+        this.banda.getAlbunes().add(album);
     }
 
     public void actualizarBanda(String nombre, String genero, Date fecha, String foto) {
@@ -77,7 +77,7 @@ public class ControlBanda {
 
         List<String> listaAlbumes = new ArrayList<>();
 
-        for (Album album : banda.getAlbum()) {
+        for (Album album : banda.getAlbunes()) {
             listaAlbumes.add(album.getNombre());
         }
 

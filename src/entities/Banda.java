@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import entities.Validaciones.BandaValidaciones;
+import exceptions.BandaExceoption;
+
 public class Banda {
     private String nombre;
     private String genero;
     private Date fecha;
     private String foto;
     private List<Miembro> miembros;
-    private List<Album>album;
+    private List<Album> albuneList;
 
     /**
      * Para la creación de la banda 
@@ -21,20 +24,24 @@ public class Banda {
      */
 
     public Banda(String nombre, String genero, Date fecha, String foto) {
+        boolean esValido = BandaValidaciones.crearBandaacion(nombre, genero, fecha, foto);
+        if (!esValido) {
+            throw new BandaExceoption("Banda no creada. Datos incompletos. Todos los datos son requeridos");
+        }
         this.nombre = nombre;
         this.genero = genero;
         this.fecha = fecha;
         this.foto = foto;
         this.miembros = new ArrayList<>();
-        this.album = new ArrayList<>();
+        this.albuneList = new ArrayList<>();
     }
 
     public List<Miembro> getMiembros() {
         return miembros;
     }
 
-    public List<Album> getAlbum() {
-        return album;
+    public List<Album> getAlbunes() {
+        return albuneList;
     }
 
     public void setNombre(String nombre) {
@@ -69,7 +76,4 @@ public class Banda {
         return foto;
     }
 
-    
-    
-    
 }

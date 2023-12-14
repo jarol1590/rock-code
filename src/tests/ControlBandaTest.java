@@ -4,6 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.junit.jupiter.api.Test;
 
 import controls.ControlBanda;
@@ -63,5 +66,22 @@ public class ControlBandaTest {
         controlBanda.agregarAlbumBanda(album);
 
         assertTrue(banda.getAlbunes().contains(album));
+    }
+
+    @Test
+    public void actualizarBanda() {
+        Banda bandaActualizar = fabrica.crearBandaMock();
+
+        Calendar fecha = Calendar.getInstance();
+        fecha.set(2023, Calendar.NOVEMBER, 23);
+        Date fechaCreacionBanda = fecha.getTime();
+        Banda bandaEsperada = new Banda("nombre actualizado", "genero actualizado", fechaCreacionBanda, "");
+
+        ControlBanda controlBanda = new ControlBanda(bandaActualizar);
+
+        controlBanda.actualizarBanda("nombre actualizado", "genero actualizado",
+                fechaCreacionBanda, "");
+
+        assertEquals(bandaEsperada, bandaActualizar);
     }
 }

@@ -100,9 +100,11 @@ public class RockyCode {
         Date fechaConciertoDos = calendarFechaConciertoDos.getTime();
         LocalTime horaConciertoDos = LocalTime.of(19, 0, 0);
 
-        Concierto conciertoUno = new Concierto("Las Vegas rock", "Las Vegas", fechaConciertoUno, horaConciertoUno,
+        Concierto conciertoUno = new Concierto("Las Vegas rock", "Las Vegas", fechaConciertoUno,
+                horaConciertoUno,
                 5000);
-        Concierto conciertoDos = new Concierto("U Caldas rock", "Universidad de Caldas", fechaConciertoDos,
+        Concierto conciertoDos = new Concierto("U Caldas rock", "Universidad de Caldas",
+                fechaConciertoDos,
                 horaConciertoDos, 2500);
 
         controlConcierto.agregarConcierto(conciertoUno);

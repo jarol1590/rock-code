@@ -6,12 +6,13 @@ package exceptions;
 public class CancionException extends RuntimeException {
 
     /**
-     * Constructor que genera el mensaje para la clase Canción (ej: Canción no encontrada)
+     * Constructor que genera el mensaje para la clase Canción (ej: Canción no
+     * encontrada)
+     * 
      * @param mensaje
      */
-    
-public CancionException(String mensaje){
-    super(mensaje);
-}
-}
 
+    public CancionException(String mensaje) {
+        super(mensaje);
+    }
+}

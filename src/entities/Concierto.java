@@ -29,16 +29,6 @@ public class Concierto {
         this.boletosVendidos = new ArrayList<>();
     }
 
-    // public static Concierto crearConcierto(String nombre, String lugar, Date
-    // fecha, LocalTime hora, int capacidad) {
-    // if (nombre == null || lugar == null || fecha == null || hora == null ||
-    // capacidad <= 0) {
-    // throw new ConciertoException("Conciero no creado. Datos incompletos. Se
-    // requieren todos los datos");
-    // }
-    // return new Concierto(nombre, lugar, fecha, hora, capacidad);
-    // }
-
     @Override
     public String toString() {
         return "===============Concierto:=================\n" +

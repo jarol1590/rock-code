@@ -16,6 +16,14 @@ public class Banda {
     private List<Miembro> miembros;
     private List<Album> albuneList;
 
+    /**
+     * Para la creación de la banda 
+     * @param nombre
+     * @param genero
+     * @param fecha
+     * @param foto
+     */
+
     public Banda(String nombre, String genero, Date fecha, String foto) {
         boolean esValido = BandaValidaciones.crearBandaacion(nombre, genero, fecha, foto);
         if (!esValido) {

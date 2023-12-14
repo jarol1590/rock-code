@@ -16,11 +16,13 @@ public class Banda {
     private List<Album> albuneList;
 
     /**
-     * Para la creación de la banda 
-     * @param nombre
-     * @param genero
-     * @param fecha
-     * @param foto
+     * Para crear la banda necesita el nombre, genero ("Punk, Rock, Reggue, etc"), fecha
+     * y Foto, en caso que no se tenga uno de estos datos lanzará una excepción
+     * @param nombre Nombre de la band. Tipo String
+     * @param genero Genero básico de la banda ("Punk, Rock, Reggue, etc"). Tipo String
+     * @param fecha Fecha de la fundación de la banda. Tipo Date (Hora, mes, dia)
+     * @param foto Dirección donde se guarda la foto de la banda. Tipo String 
+     * Ejemplo: (D:\Documents\Desktop)
      */
 
     public Banda(String nombre, String genero, Date fecha, String foto) {

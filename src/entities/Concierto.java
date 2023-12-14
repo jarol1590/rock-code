@@ -21,7 +21,7 @@ public class Concierto {
      * se tenga uno de estos datos lanzará una excepción
      * @param nombre Nombre del concierto. Tipo String
      * @param lugar Nombre del lugar donde se llevará a cabo el concierto. Tipo String
-     * @param fecha Fecha del concierto no puede ser anterior a la fecha acutal. Tipo Date
+     * @param fecha Fecha del concierto no puede ser anterior a la fecha acutal. Tipo Date (Año, mes, dia)
      * @param hora Hora de inicio del concierto. Tipo LocalTime (Hora, minutos, segundos)
      * @param capacidad Capacidad total registrada por el lugar del concierto. Tipo int
      */

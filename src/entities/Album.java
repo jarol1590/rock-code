@@ -12,6 +12,13 @@ public class Album {
     private Date fecha;
     private List<Cancion> cancion;
 
+
+  /**
+   * Para crear un Album necesita el nombre y fecha de lanzamiento del album. En caso de no tener
+   * algun dato lanza una excepción.
+   * @param nombre Nombre dado del album. Tipo String
+   * @param fecha Fecha de lanzamiento del album. Tipo Date (Hora, mes, dia)
+   */
     public Album(String nombre, Date fecha) {
         boolean esValido = AlbumValidaciones.crearAlbumValidacion(nombre, fecha);
         if (!esValido) {

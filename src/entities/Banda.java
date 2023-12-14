@@ -12,6 +12,14 @@ public class Banda {
     private List<Miembro> miembros;
     private List<Album>album;
 
+    /**
+     * Para la creación de la banda 
+     * @param nombre
+     * @param genero
+     * @param fecha
+     * @param foto
+     */
+
     public Banda(String nombre, String genero, Date fecha, String foto) {
         this.nombre = nombre;
         this.genero = genero;

@@ -10,7 +10,7 @@ import exceptions.AlbumException;
 public class Album {
     private String nombre;
     private Date fecha;
-    private List<Cancion> cancion;
+    private List<Cancion> canciones;
 
 
   /**
@@ -26,7 +26,7 @@ public class Album {
         }
         this.nombre = nombre;
         this.fecha = fecha;
-        this.cancion = new ArrayList<>();
+        this.canciones = new ArrayList<>();
 
     }
 
@@ -34,8 +34,8 @@ public class Album {
         return nombre;
     }
 
-    public List<Cancion> getCancion() {
-        return cancion;
+    public List<Cancion> getCanciones() {
+        return canciones;
     }
 
     public Date getFecha() {

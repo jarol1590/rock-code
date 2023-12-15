@@ -18,9 +18,12 @@ public class ControlMiembro {
     /**
      * Método que agrega un instrumento a un miembro ya existente
      * 
-     * @param cedula      Identificador del miembro
+     * @param cedula      Identificador del miembro. Tipo String
      * @param instrumento Nombre del instrumento que se le agregará a la lista de
-     *                    instrumentos al miembro
+     *                    instrumentos al miembro, el instrumento no puede ser
+     *                    repetido
+     *                    ya que se usa el tipo HashMap, el cual no deja ingresar
+     *                    valores iguales en una lista. Tipo String
      */
     public void agregarInstrumento(String cedula, String instrumento) {
         Miembro miembroEncontrado = buscarMiembroporCedula(cedula);

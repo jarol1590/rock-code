@@ -5,9 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import entities.Album;
-import entities.Banda;<<<<<<<HEAD
-import entities.Concierto;=======
-import entities.Cancion;>>>>>>>cee225fe2854df07088a6e1c3be17aff583455cb
+import entities.Banda;
+import entities.Concierto;
+import entities.Cancion;
 import entities.Miembro;
 import entities.Rol;
 
@@ -45,6 +45,7 @@ public class Fabrica {
                 horaConciertoDos, 2500);
 
         return concierto;
+    }
 
     public Cancion crearCancionMock() {
         LocalTime tiempoCancion = LocalTime.of(0, 4, 15);

@@ -9,7 +9,7 @@ import exceptions.BoletoException;
 
 public class BoletoTest {
      @Test
-    public void crearAlbumFallaTest() {
+    public void crearBoletoFallaTest() {
         assertThrows(BoletoException.class, () -> new Boleto(0, false));
     }
 }

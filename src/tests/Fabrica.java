@@ -6,6 +6,7 @@ import java.util.Date;
 
 import entities.Album;
 import entities.Banda;
+import entities.Concierto;
 import entities.Cancion;
 import entities.Miembro;
 import entities.Rol;
@@ -34,7 +35,19 @@ public class Fabrica {
         return album;
     }
 
-    public Cancion crearCancionMock(){
+    public Concierto crearConciertoMock() {
+        Calendar calendarFechaConcierto = Calendar.getInstance();
+        calendarFechaConcierto.set(2024, Calendar.DECEMBER, 15);
+        Date fechaConcierto = calendarFechaConcierto.getTime();
+        LocalTime horaConciertoDos = LocalTime.of(19, 0, 0);
+        Concierto concierto = new Concierto("U Caldas rock", "Universidad de Caldas",
+                fechaConcierto,
+                horaConciertoDos, 2500);
+
+        return concierto;
+    }
+
+    public Cancion crearCancionMock() {
         LocalTime tiempoCancion = LocalTime.of(0, 4, 15);
         Cancion cancion1 = new Cancion("PrimerCancion", tiempoCancion);
         return cancion1;

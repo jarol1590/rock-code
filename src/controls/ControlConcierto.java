@@ -12,8 +12,10 @@ public class ControlConcierto {
     }
 
     /**
-     * Agrega un concierto a la lista del ControlConciertos, esto se usa con el fin de mostrar
+     * Agrega un concierto a la lista del ControlConciertos, esto se usa con el fin
+     * de mostrar
      * una lista con todos los conciertos que ha dado y va a dar la banda
+     * 
      * @param concierto Objeto tipo Concierto que se desea agregar a la lista.
      */
 
@@ -22,7 +24,8 @@ public class ControlConcierto {
     }
 
     /**
-     * Muestra la información de todos los conciertos que ha dado y va a dar la banda.
+     * Muestra la información de todos los conciertos que ha dado y va a dar la
+     * banda.
      */
     public void verInfoBasicaConciertos() {
         for (Concierto concierto : conciertos) {
@@ -30,4 +33,7 @@ public class ControlConcierto {
         }
     }
 
+    public List<Concierto> getConciertos() {
+        return this.conciertos;
+    }
 }

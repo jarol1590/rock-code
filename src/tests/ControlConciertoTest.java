@@ -6,12 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-
-import controls.ControlBanda;
 import controls.ControlConcierto;
-import entities.Banda;
 import entities.Concierto;
-import entities.Miembro;
 
 public class ControlConciertoTest {
 
